@@ -13,13 +13,25 @@ public class Piece extends Ellipse {
 
     public static final int PIECE_RADIUS = 25;
     
-    public Piece (double centerX, double centerY, double width, double height, Color color){
+    public Piece (double centerX, double centerY, double width, double height, Color color, String player){
         super(centerX, centerY, PIECE_RADIUS * 2, PIECE_RADIUS *2);
         this.setCenter(centerX, centerY);
         this.setFillColor(color);
+        if (color == Color.RED){
+            player = "1";
+        } else if (color == Color.YELLOW){
+            player = "2";
+        }
+        
     }
+
+    /**
+     * Adds the GraphicsObject item to the canvas
+     * @param canvas a CanvasWindow canvas
+     */
 
     public void addToCanvas(CanvasWindow canvas){
         canvas.add(this);
     }
+
 }

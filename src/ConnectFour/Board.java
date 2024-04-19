@@ -9,7 +9,7 @@ import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Rectangle;
 import edu.macalester.graphics.ui.TextField;
 
-/*
+/**
  * This Class creates the graphical board interface for our Connect Four game
  * Written by Josh Planko for the COMP 128 Final Project, Spring 2024
  */
@@ -18,6 +18,8 @@ public class Board {
 
     public static final int CANVAS_HEIGHT = 800;
     public static final int CANVAS_WIDTH = 600;
+    public String columnInput;
+    private String intermediate;
 
     public Board (CanvasWindow canvas){
         
@@ -48,7 +50,20 @@ public class Board {
         canvas.add(whatColumn);
 
         TextField input = new TextField();
-        canvas.add(input, 300, 150);
+        input.setBackground(Color.GRAY);
+        input.onChange(intermediate->{
+            if (intermediate.endsWith("\n")){
+                columnInput = intermediate.trim();
+                input.setText("");
+            }
+        });
+        canvas.add(input, 375, 112);
+
+        Piece p1 = new Piece (50, 675, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.RED, "1");
+        canvas.add(p1);
+
+        Piece p2 = new Piece (550, 675, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.YELLOW, "2");
+        canvas.add(p2);
 
         canvas.draw();
     }
@@ -56,5 +71,6 @@ public class Board {
     public static void main (String[] args){
         CanvasWindow canvas = new CanvasWindow("Connect Four!", CANVAS_WIDTH, CANVAS_HEIGHT);
         new Board(canvas);
+        
     }
 }

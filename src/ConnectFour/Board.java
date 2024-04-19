@@ -53,8 +53,8 @@ public class Board {
         canvas.draw();
     }
 
-    public static void main (String[] args){
-        CanvasWindow canvas = new CanvasWindow("Connect Four!", CANVAS_WIDTH, CANVAS_HEIGHT);
-        new Board(canvas);
-    }
+//     public static void main (String[] args){
+//         CanvasWindow canvas = new CanvasWindow("Connect Four!", CANVAS_WIDTH, CANVAS_HEIGHT);
+//         new Board(canvas);
+//     }
 }

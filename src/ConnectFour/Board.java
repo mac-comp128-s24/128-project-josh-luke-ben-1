@@ -4,7 +4,10 @@ import java.awt.Color;
 
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.Ellipse;
+import edu.macalester.graphics.FontStyle;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Rectangle;
+import edu.macalester.graphics.ui.TextField;
 
 /*
  * This Class creates the graphical board interface for our Connect Four game
@@ -22,12 +25,30 @@ public class Board {
         board.setFillColor(Color.BLUE);
         canvas.add(board);
 
+        double slotX = 5;
+        double textY = 625;
         for (int i = 0; i < 7; i++){
-            for (int j = 0; j < 6; i++){
-                Ellipse slot = new Ellipse();
+            double slotY = 193;
+            slotX += 68;
+            GraphicsText columnNumber = new GraphicsText("" + (i + 1), slotX + 20, textY);
+            canvas.add(columnNumber);
+            for (int j = 0; j < 6; j++){
+                Ellipse slot = new Ellipse(slotX, slotY, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS * 2);
+                slot.setFillColor(Color.WHITE);
+                canvas.add(slot);
+                slotY += 68;
             }
         }
 
+        GraphicsText welcomeText = new GraphicsText("Welcome to Connect Four!", 60, 50);
+        welcomeText.setFontSize(40);
+        canvas.add(welcomeText);
+
+        GraphicsText whatColumn = new GraphicsText("What column do you want to place your piece in?", 60, 125);
+        canvas.add(whatColumn);
+
+        TextField input = new TextField();
+        canvas.add(input, 300, 150);
 
         canvas.draw();
     }

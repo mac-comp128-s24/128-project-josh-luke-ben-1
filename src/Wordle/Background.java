@@ -1,7 +1,5 @@
 package Wordle;
 
-import org.w3c.dom.Text;
-
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.Rectangle;
 

@@ -57,12 +57,13 @@ public class Board {
                 input.setText("");
             }
         });
+        
         canvas.add(input, 375, 112);
 
-        Piece p1 = new Piece (50, 675, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.RED, "1");
+        Piece p1 = new Piece (50, 675, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.RED, 1);
         canvas.add(p1);
 
-        Piece p2 = new Piece (550, 675, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.YELLOW, "2");
+        Piece p2 = new Piece (550, 675, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.YELLOW, 2);
         canvas.add(p2);
 
         canvas.draw();

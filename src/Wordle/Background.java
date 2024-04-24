@@ -14,7 +14,7 @@ public class Background{
     public Background(CanvasWindow canvas){
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 6; j++){
-                Rectangle square = new Rectangle(55 + i*60, 200 + j*60,90,90);
+                Rectangle square = new Rectangle(55 + i*100, 140 + j*100,90,90);
                 canvas.add(square);
             }
         }
@@ -27,7 +27,7 @@ public class Background{
         canvas.add(word);
 
         TextField input = new TextField();
-        canvas.add(input, 300, 150);
+        canvas.add(input, 300, 125);
 
         canvas.draw();
 

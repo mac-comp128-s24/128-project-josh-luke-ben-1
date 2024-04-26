@@ -10,6 +10,7 @@ public class Background{
     public static final int CANVAS_HEIGHT = 800;
     public static final int CANVAS_WIDTH = 600;
 
+    TextField input;
 
     public Background(CanvasWindow canvas){
         for (int i = 0; i < 5; i++){
@@ -23,16 +24,19 @@ public class Background{
         welcomeText.setFontSize(40);
         canvas.add(welcomeText);
 
-        GraphicsText word = new GraphicsText("Enter a 5 letter word", 150, 125);
+        GraphicsText word = new GraphicsText("Enter a 5 letter word", 150, 95);
         canvas.add(word);
 
-        TextField input = new TextField();
-        canvas.add(input, 300, 125);
+        input = new TextField();
+        canvas.add(input, 300, 80);
 
         canvas.draw();
 
     }
 
+    public TextField getInput() {
+        return input;
+    }
 
     public static void main(String[] args){
         CanvasWindow canvas = new CanvasWindow("Wordle", CANVAS_WIDTH, CANVAS_HEIGHT);

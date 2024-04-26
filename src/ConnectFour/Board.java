@@ -20,6 +20,7 @@ public class Board {
     public static final int CANVAS_WIDTH = 600;
     public String columnInput;
     private String intermediate;
+    private DataBoard dataBoard;
 
     public Board (CanvasWindow canvas){
         
@@ -57,7 +58,7 @@ public class Board {
                 input.setText("");
             }
         });
-        
+
         canvas.add(input, 375, 112);
 
         Piece p1 = new Piece (50, 675, Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.RED, 1);
@@ -67,6 +68,23 @@ public class Board {
         canvas.add(p2);
 
         canvas.draw();
+    }
+
+    public void addPiece(DataBoard dataBoard, CanvasWindow canvas){
+        int[][] data = dataBoard.getData();
+        for(int i = 7; i > 0; i--){
+            if (data[i][getColumnInput()] == 0){
+                data[i][getColumnInput()] = 1;
+                Piece newPiece = new Piece((73 + 68 * i), 193 + 68 * getColumnInput(), Piece.PIECE_RADIUS*2, Piece.PIECE_RADIUS*2, Color.RED, 1);
+                canvas.add(newPiece);
+
+            }
+            canvas.draw();
+        }
+    }
+
+    public int getColumnInput(){
+        return Integer.parseInt(columnInput);
     }
 
     public static void main (String[] args){

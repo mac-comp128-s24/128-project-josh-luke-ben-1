@@ -13,7 +13,6 @@ public class Wordle {
     public Wordle(){
         CanvasWindow canvas = new CanvasWindow("Wordle", CANVAS_WIDTH, CANVAS_HEIGHT);
         background = new Background(canvas);
-
     }
 
     public void run(){

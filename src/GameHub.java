@@ -31,7 +31,7 @@ private int nextY = 100;
         canvas.setBackground(Color.PINK);
         
         titleText = new GraphicsText("Welcome to the Game Hub!");
-        titleText.setCenter(CANVAS_WIDTH / 2.0, nextY);
+        titleText.setCenter(230, nextY);
         titleText.setFont(FontStyle.BOLD, 24);
         canvas.add(titleText);
         
@@ -94,9 +94,7 @@ private int nextY = 100;
         Wordle wordle = new Wordle();
       
     }
-
-    
-
+  
     public static void main(String[] args) {
         GameHub gameHub = new GameHub();
         gameHub.addGame("Connect Four");

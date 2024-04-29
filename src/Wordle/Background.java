@@ -19,10 +19,11 @@ public class Background{
     CanvasWindow canvas;
     int guesses;
     Wordle wordle;
+    Word wordObject;
 
-    public Background(CanvasWindow canvas){
-
-        canvas = this.canvas;
+    public Background(CanvasWindow canvas, Wordle wordle, String randWord){
+        this.canvas = canvas;
+        this.wordle = wordle;
         guesses = 0;
 
         for (int i = 0; i < 5; i++){
@@ -42,13 +43,26 @@ public class Background{
         input = new TextField();
         canvas.add(input, 300, 80);
 
+        wordObject = new Word();
+        wordObject.readWordsFromFile();
+
         Button enterButton = new Button("Enter");
         enterButton.onClick(() -> {
             enteredWord = input.getText();
-            List<Color> colors = wordle.compareWords(enteredWord, wordle.getRandomWord());
-            fillBoxes(colors);
-            guesses++;
-            System.out.println("Entered word: " + enteredWord);
+            System.out.println(enteredWord);
+            // if(enteredWord.length() == 5){// && wordObject.isWord(enteredWord)
+                List<Color> colors = wordle.compareWords(enteredWord, randWord);
+                fillBoxes(colors);
+                guesses++;
+    
+                if (guesses == 6){
+                    loser(randWord);
+                }
+        
+                if (randWord.equals(enteredWord)){
+                    winner(randWord);
+                }   
+            // }
         });
         canvas.add(enterButton, 450, 80);
 
@@ -98,8 +112,6 @@ public class Background{
         canvas.draw();
     }
 
-    // public static void main(String[] args) {
-    //     new Background(canvas);
-    // }
+    
 
 }

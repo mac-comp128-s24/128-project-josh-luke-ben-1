@@ -26,10 +26,23 @@ public class Word {
         }
     }
 
-    public String getRandomWord() {
+    public String pickRandomWord() {
         Random rand = new Random();
         return words.get(rand.nextInt(words.size()));
     }
 
-    
+    public List<String> getWords() {
+        return words;
+    }
+
+    public boolean isWord(String word){
+        boolean output = false;
+        for(String w : words){
+            if (word.equals(w)){
+                output = true;
+                break;
+            }
+        }
+        return output;
+    }
 }

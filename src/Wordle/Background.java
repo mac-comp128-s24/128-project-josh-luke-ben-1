@@ -40,6 +40,9 @@ public class Background{
         GraphicsText word = new GraphicsText("Enter a 5 letter word", 150, 95);
         canvas.add(word);
 
+        GraphicsText wordsGuessed = new GraphicsText("Words Guessed:", 10, 20);
+        canvas.add(wordsGuessed);
+
         input = new TextField();
         canvas.add(input, 300, 80);
 
@@ -49,11 +52,13 @@ public class Background{
         Button enterButton = new Button("Enter");
         enterButton.onClick(() -> {
             enteredWord = input.getText();
-            System.out.println(enteredWord);
-            // if(enteredWord.length() == 5){// && wordObject.isWord(enteredWord)
+            if(enteredWord.length() == 5 && wordObject.isWord(enteredWord)){ 
                 List<Color> colors = wordle.compareWords(enteredWord, randWord);
                 fillBoxes(colors);
                 guesses++;
+
+                GraphicsText wordguess = new GraphicsText(enteredWord, 10, 20*guesses + 20);
+                canvas.add(wordguess);
     
                 if (guesses == 6){
                     loser(randWord);
@@ -62,7 +67,7 @@ public class Background{
                 if (randWord.equals(enteredWord)){
                     winner(randWord);
                 }   
-            // }
+            }
         });
         canvas.add(enterButton, 450, 80);
 

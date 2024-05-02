@@ -15,18 +15,13 @@ public class Piece extends Ellipse {
     private double centerX;
     private double centerY;
     private Color color;
-    private int player;
+    private char player;
     
     
-    public Piece (double centerX, double centerY, double width, double height, Color color, int player){
+    public Piece (double centerX, double centerY, double width, double height, Color color, char player){
         super(centerX, centerY, PIECE_RADIUS * 2, PIECE_RADIUS *2);
         this.setCenter(centerX, centerY);
         this.setFillColor(color);
-        if (color == Color.RED){
-            player = 1;
-        } else if (color == Color.YELLOW){
-            player = 2;
-        }
         
     }
 
@@ -55,7 +50,7 @@ public class Piece extends Ellipse {
         return color;
     }
 
-    public int getPlayer() {
+    public char getPlayer() {
         return player;
     }
 

@@ -20,6 +20,7 @@ private int nextY = 100;
 private int nextb = 50;
 private int CANVAS_HEIGHT = 400;
 private int CANVAS_WIDTH = 750;
+private ConnectFour connectFour;
 
     public GameHub(){
 
@@ -87,7 +88,7 @@ private int CANVAS_WIDTH = 750;
 
     private void playConnectFour() {
         
-        ConnectFour connectFour = new ConnectFour();
+        connectFour = new ConnectFour();
         
     }
 

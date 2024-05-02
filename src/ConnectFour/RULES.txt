@@ -1,0 +1,8 @@
+Welcome to Connect Four!
+
+The rules of the game are simple. Players take turns placing a piece in one of the available columns on the board
+by typing in the number of the column they would like to place the piece in in the text field labelled on the screen. 
+The goal of connect four is to line up four of the same colored pieces in a row, whether that be vertically, horizontally, or diagonally, anything counts!
+
+Built by Josh Planko for the Comp 128 Spring 2024 Final Project. Help was recieved from Professor Bret Jackson and online help to provide the win condition check through
+johnathan-irvin's GitHub page. 

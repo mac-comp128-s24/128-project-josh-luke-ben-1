@@ -9,6 +9,11 @@ import edu.macalester.graphics.ui.Button;
 import edu.macalester.graphics.ui.TextField;
 import java.awt.Color;
 
+
+/**
+ * This Class creates the graphical board interface for our Wordle game and changes it based on the inputed word
+ * Written by Benjamin King for the COMP 128 Final Project, Spring 2024
+ */
 public class Background{
     
     public static final int CANVAS_HEIGHT = 800;
@@ -74,6 +79,10 @@ public class Background{
         canvas.draw();
     }
 
+
+    /**
+    * getter methods
+    */
     public String getEnteredWord() {
         return enteredWord;
     }
@@ -82,6 +91,10 @@ public class Background{
         return guesses;
     }
 
+    /**
+    * This function presents a winner screen with the given word(which in this case would be the random word selected)
+    * @param theWord random winning word
+    */
     public void winner(String theWord){
         canvas.removeAll();
         GraphicsText winner = new GraphicsText("WINNER!", 180, 300);
@@ -95,6 +108,10 @@ public class Background{
         canvas.draw();
     }
 
+    /**
+    * This function presents a loser screen with the given word(which in this case would be the random word selected)
+    * @param theWord random winning word
+    */
     public void loser(String theWord){
         canvas.removeAll();
         GraphicsText winner = new GraphicsText("You lose :(", 180, 300);
@@ -108,6 +125,11 @@ public class Background{
         canvas.draw();
     }
 
+
+    /**
+    * This function fills the boxes with a certain color in order from a list of colors on the row that is guessed
+    * @param colors a list of colors of length 5
+    */
     public void fillBoxes(List<Color> colors) {
         for (int i = 0; i < 5; i++){
             Rectangle square = new Rectangle(55 + i*100, 140 + guesses*100,90,90);

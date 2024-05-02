@@ -15,6 +15,10 @@ public class Wordle {
     CanvasWindow canvas;
     String randomWord;
 
+    /**
+     * This Class runs the wordle game
+     * Written by Benjamin King for the COMP 128 Final Project, Spring 2024
+     */
     public Wordle(){
         canvas = new CanvasWindow("Wordle", CANVAS_WIDTH, CANVAS_HEIGHT);
 
@@ -28,6 +32,11 @@ public class Wordle {
         canvas.draw();
     }
 
+    /**
+    * This function checks whether a word is in the valid wordle words list
+    * @param enteredWord word inputed into the user interface
+    * @param randomWord2 word randomly picked from the arraylist of valid wordle words
+    */
     public List<Color> compareWords(String enteredWord, String randomWord2) {
     List<Color> colors = new ArrayList<>();
     for (int i = 0; i < enteredWord.length(); i++) {
@@ -44,10 +53,16 @@ public class Wordle {
     return colors;
 }
 
+    /**
+    * getter methods
+    */
     public String getRandomWord() {
         return randomWord;
     }
 
+    /**
+    * main method that runs the game
+    */
     public static void main(String[] args) {
         Wordle wordle = new Wordle();
     }

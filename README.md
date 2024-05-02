@@ -4,3 +4,5 @@ This project builds upon Ben and Josh's Comp-127 project by building a second it
 This game hub creates Connect Four and Wordle games along with a central hub wher you can choose which game you want to play by typing in the name of the game. 
 
 Built by Ben King, Josh Planko, and Luke Moore for the Comp 128 Spring Semseter Final project in April of 2024. 
+
+Note: For the wordle to work, you need to download the valid-wordle-words.txt file and set the file path in the "Word" class to where it is in your computer.

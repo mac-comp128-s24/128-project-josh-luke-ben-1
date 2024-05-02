@@ -52,6 +52,9 @@ private int CANVAS_WIDTH = 750;
             System.out.println("playing worlde");
             playWordle();
         }
+        if(input.toLowerCase().equals("connect four"));
+            System.out.println("playing connect four");
+            playConnectFour();
 
       
     }

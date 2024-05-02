@@ -22,6 +22,10 @@ private int CANVAS_HEIGHT = 400;
 private int CANVAS_WIDTH = 750;
 private ConnectFour connectFour;
 
+/**
+ * The constructor creates the visual interface of the game hub
+ */
+
     public GameHub(){
 
 
@@ -45,7 +49,10 @@ private ConnectFour connectFour;
 
         }
     
-
+/**
+ * The process input function takes the input from the text field, adjusts for case differences, and starts the program of choice once it is typed into the text field
+ * @param input string input from the text field in the UI
+ */
     public void processInput(String input){
         
 
@@ -59,7 +66,10 @@ private ConnectFour connectFour;
     }
         
             
-
+/**
+ * The add game method adds a GraphicsText item the the UI with the title of each game added in the parameter
+ * @param gameName the name of the game that we want toa dd a label for
+ */
     public void addGame(String gameName) {
         GraphicsText gameText = new GraphicsText(gameName);
         gameText.setCenter(CANVAS_WIDTH / 3.8, nextY + nextb);
@@ -70,6 +80,10 @@ private ConnectFour connectFour;
 
         nextb += 70;
     }
+
+    /**
+     * The select game method selects the game to play based on the text field input
+     */
 
     public void selectGame() {
         String selectedGame = selectTextField.getText();
@@ -86,12 +100,19 @@ private ConnectFour connectFour;
         }
     }
 
+    /**
+     * Runs the connect four game
+     */
+
     private void playConnectFour() {
         
         connectFour = new ConnectFour();
         
     }
 
+    /**
+    * Runs the wordle game
+    */
     private static void playWordle() {
         
         Wordle wordle = new Wordle();

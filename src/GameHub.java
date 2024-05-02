@@ -52,13 +52,13 @@ private ConnectFour connectFour;
         if(input.toLowerCase().equals("wordle")){
             System.out.println("playing worlde");
             playWordle();
-        }
-        if(input.toLowerCase().equals("connect four"));
+        }else if (input.toLowerCase().equals("connect four")) {
             System.out.println("playing connect four");
             playConnectFour();
-
-      
+        }
     }
+        
+            
 
     public void addGame(String gameName) {
         GraphicsText gameText = new GraphicsText(gameName);
